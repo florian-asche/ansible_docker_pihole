@@ -1,0 +1,10 @@
+---
+- name: deploy pihole custom.list
+  ansible.builtin.template:
+    src: 'custom.list.j2'
+    dest: "{{ pihole_customlist_directory_path }}/custom.list"
+    #owner: "root"
+    #group: "root"
+    #mode: '0644'
+  tags:
+    - template

@@ -1,0 +1,4 @@
+---
+pihole_customlist_directory_path: /etc/pihole
+own_pihole_dns_data: []
+custom_network_domain: "mynetwork.local"

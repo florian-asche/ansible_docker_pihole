@@ -1,0 +1,18 @@
+##
+# {{ ansible_managed }}
+
+{% for data in own_pihole_dns_entries_special %}
+{% for data1 in data.hostnames %}
+{{ data.ipaddress }} {{ data1 }}
+{% endfor %}{% endfor %}
+
+{% for data in own_pihole_dns_entries %}
+{% for data1 in data.hostnames %}
+{{ data.ipaddress }} {{ data1 }}
+{{ data.ipaddress }} {{ data1 }}.{{custom_network_domain}}
+{% endfor %}{% endfor %}
+
+{% for host, config in openwrt_config_dhcp.hosts.items() %}
+{{ config.ip }} {{ host }}
+{{ config.ip }} {{ host }}.{{custom_network_domain}}
+{% endfor %}
