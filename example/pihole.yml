@@ -1,0 +1,37 @@
+---
+pihole_customlist_directory_path: /var/lib/docker/volumes/nameserver_pihole_conf/_data
+custom_network_domain: "mynetwork.local"
+
+# NORMAL ADDITIONAL DNS
+own_pihole_dns_entries:
+  - ipaddress: "192.168.44.1"
+    hostnames:
+    - router01
+
+  # - ipaddress: "192.168.33.254"
+  #   hostnames:
+  #   - router02
+
+  # temp
+  - ipaddress: "192.168.44.55"
+    hostnames:
+    - dns
+    - dnsserver
+    - pihole
+    - pi.hole
+
+  - ipaddress: "192.168.44.66"
+    hostnames:
+    - "tasadm"
+    - "homer"
+
+
+### SPECIAL
+own_pihole_dns_entries_special:
+  - ipaddress: "192.168.1.1"
+    hostnames:
+    - "fritz.box"
+  
+  - ipaddress: "139.7.147.138"
+    hostnames:
+    - "center.vodafone.de"

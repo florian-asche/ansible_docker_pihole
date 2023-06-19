@@ -1,0 +1,11 @@
+---
+openwrt_config_dhcp:
+  interfaces:
+    ADMIN:  { interface: ADMIN,  ignore: 0, dhcp_option: ["6,192.168.55.3", "42,192.168.55.1"], leasetime: 24h, start: 5, limit: 200 }
+    IOT:    { interface: IOT,    ignore: 0, dhcp_option: ["6,192.168.55.3", "42,192.168.77.1"], leasetime: 24h, start: 5, limit: 200 }
+    BADIOT: { interface: BADIOT, ignore: 0, dhcp_option: ["6,192.168.55.3", "42,192.168.66.1"], leasetime: 24h, start: 5, limit: 200 }
+    # DNS also needs to be set manually in ping-exporter,fhem (auto by docker)
+  hosts:
+    # 192.168.55.X | VLAN 100 | ADMIN
+    #test01:               { dns: 1", mac: "00:25:90:CA:19:3D", ip: 192.168.55.60 }
+    #test02:               { dns: 1", mac: "00:25:90:c1:3b:17", ip: 192.168.55.61 }
